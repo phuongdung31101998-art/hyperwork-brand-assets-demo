@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HyperWork — Brand Assets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Chivo+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* =====================
+     RESET & BASE
+  ===================== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --orange: #FB5C1E;
+    --orange-dim: rgba(251,92,30,0.12);
+    --orange-dim2: rgba(251,92,30,0.06);
+    --black: #0A0A0A;
+    --surface: #111111;
+    --surface-2: #181818;
+    --surface-3: #202020;
+    --border: rgba(255,255,255,0.07);
+    --border-mid: rgba(255,255,255,0.12);
+    --text-primary: #F0EDE8;
+    --text-secondary: #888480;
+    --text-muted: #4A4744;
+    --white: #FFFFFF;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'Chivo Mono', monospace;
+    --section-gap: 140px;
+    --container: 1280px;
+    --radius-sm: 3px;
+    --radius-md: 6px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--orange); color: var(--white); }
+
+  /* =====================
+     TYPOGRAPHY
+  ===================== */
+  .display-xl {
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+  }
+  .display-lg {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+  .display-md {
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .heading-sm {
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+  .body-lg { font-size: 18px; line-height: 1.7; font-weight: 400; }
+  .body-md { font-size: 15px; line-height: 1.65; }
+  .label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+  }
+
+  /* =====================
+     LAYOUT UTILS
+  ===================== */
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  @media (max-width: 768px) { .container { padding: 0 24px; } }
+
+  .section { padding: var(--section-gap) 0; }
+  .section-sm { padding: 80px 0; }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .orange { color: var(--orange); }
+
+  /* =====================
+     LOGO MARK SVG
+  ===================== */
+  .hpw-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .hpw-mark svg { flex-shrink: 0; }
+  .hpw-mark-text {
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    color: var(--text-primary);
+    text-transform: uppercase;
+  }
+
+  /* =====================
+     HEADER / NAV
+  ===================== */
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.3s;
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text-primary); }
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 20px;
+    background: var(--orange);
+    color: var(--white);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  .nav-mobile-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--border-mid);
+    color: var(--text-primary);
+    padding: 8px 10px;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+  }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-mobile-toggle { display: flex; }
+    .nav-cta { display: none; }
+  }
+
+  /* =====================
+     HERO
+  ===================== */
+  #hero {
+    padding-top: 160px;
+    padding-bottom: 120px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    top: 0; right: 0;
+    width: 60%;
+    height: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border: 1px solid rgba(251,92,30,0.3);
+    border-radius: 2px;
+    margin-bottom: 40px;
+  }
+  .hero-tag-dot {
+    width: 6px; height: 6px;
+    background: var(--orange);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .hero-headline { margin-bottom: 32px; color: var(--text-primary); }
+  .hero-headline em {
+    font-style: normal;
+    color: var(--orange);
+  }
+
+  .hero-body {
+    max-width: 560px;
+    color: var(--text-secondary);
+    margin-bottom: 56px;
+  }
+
+  .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: var(--orange);
+    color: var(--white);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 28px;
+    background: transparent;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-mid);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.3); color: var(--white); }
+
+  .hero-stats {
+    display: flex;
+    gap: 0;
+    margin-top: 80px;
+    border-top: 1px solid var(--border);
+    padding-top: 48px;
+  }
+  .hero-stat {
+    flex: 1;
+    padding-right: 40px;
+    border-right: 1px solid var(--border);
+    margin-right: 40px;
+  }
+  .hero-stat:last-child { border-right: none; margin-right: 0; }
+  .hero-stat-num {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .hero-stat-num .orange { color: var(--orange); }
+
+  /* =====================
+     SECTION HEADER
+  ===================== */
+  .section-header {
+    margin-bottom: 72px;
+  }
+  .section-header .label { margin-bottom: 16px; display: block; }
+  .section-header p {
+    margin-top: 16px;
+    max-width: 520px;
+    color: var(--text-secondary);
+  }
+
+  /* =====================
+     ABOUT / ECOSYSTEM
+  ===================== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+  .about-left .display-md { margin-bottom: 32px; }
+  .about-left p { color: var(--text-secondary); margin-bottom: 20px; }
+
+  .ecosystem-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  .pillar {
+    background: var(--surface);
+    padding: 24px 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: background 0.2s;
+  }
+  .pillar:hover { background: var(--surface-2); }
+  .pillar-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--orange);
+    letter-spacing: 0.1em;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+  .pillar-content h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .pillar-content p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+  /* =====================
+     LOGO ASSETS
+  ===================== */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  .logo-card {
+    background: var(--surface);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.2s;
+  }
+  .logo-card:hover { background: var(--surface-2); }
+  .logo-preview {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    position: relative;
+  }
+  .logo-preview--dark { background: var(--black); }
+  .logo-preview--light { background: #F5F3F0; }
+  .logo-preview--orange { background: var(--orange); }
+  .logo-preview-bracket {
+    position: absolute;
+    top: 12px; left: 12px; right: 12px; bottom: 12px;
+    pointer-events: none;
+  }
+  .logo-preview-bracket::before,
+  .logo-preview-bracket::after {
+    content: '';
+    position: absolute;
+    width: 14px; height: 14px;
+    border-color: var(--border-mid);
+    border-style: solid;
+  }
+  .logo-preview-bracket::before {
+    top: 0; left: 0;
+    border-width: 1px 0 0 1px;
+  }
+  .logo-preview-bracket::after {
+    bottom: 0; right: 0;
+    border-width: 0 1px 1px 0;
+  }
+  .logo-card-body {
+    padding: 20px 24px;
+    border-top: 1px solid var(--border);
+    flex: 1;
+  }
+  .logo-card-body h4 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+  }
+  .logo-card-body .meta { margin-bottom: 16px; display: block; }
+  .logo-card-formats {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .format-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border: 1px solid var(--border-mid);
+    border-radius: 2px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+  }
+  .logo-card-dl {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--orange);
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .logo-card-dl:hover { opacity: 0.7; }
+
+  /* Logo SVG inline */
+  .inline-logo-white { fill: #FFFFFF; }
+  .inline-logo-black { fill: #0A0A0A; }
+  .inline-logo-orange { fill: var(--orange); }
+
+  /* =====================
+     BRAND GUIDELINES
+  ===================== */
+  .brand-guide-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 2px;
+  }
+  @media (max-width: 768px) { .brand-guide-grid { grid-template-columns: 1fr; } }
+
+  .brand-guide-block {
+    background: var(--surface);
+    padding: 40px;
+  }
+  .brand-guide-block--full {
+    grid-column: 1 / -1;
+  }
+  .brand-guide-block h3 {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  /* Color swatches */
+  .color-palette {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .swatch-group { display: flex; flex-direction: column; gap: 6px; }
+  .swatch {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-sm);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .swatch-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+  }
+  .swatch-name {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+  }
+
+  /* Typography specimens */
+  .type-specimens { display: flex; flex-direction: column; gap: 24px; }
+  .type-specimen {
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .type-specimen:last-child { border-bottom: none; padding-bottom: 0; }
+  .type-specimen-meta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .type-specimen-sample { color: var(--text-primary); }
+
+  /* Brand principles */
+  .principles-list { display: flex; flex-direction: column; gap: 0; }
+  .principle {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .principle:last-child { border-bottom: none; }
+  .principle-idx {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--orange);
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 28px;
+  }
+  .principle-body h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .principle-body p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+  /* =====================
+     PRODUCT MEDIA LIBRARY
+  ===================== */
+  .category-tabs {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+  .cat-tab {
+    flex: 1;
+    padding: 12px 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    background: var(--surface);
+    border: none;
+    cursor: pointer;
+    border-right: 1px solid var(--border);
+    transition: background 0.15s, color 0.15s;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .cat-tab:last-child { border-right: none; }
+  .cat-tab:hover { background: var(--surface-2); color: var(--text-primary); }
+  .cat-tab.active { background: var(--surface-3); color: var(--orange); }
+
+  .media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  @media (max-width: 768px) { .media-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .media-grid { grid-template-columns: 1fr; } }
+
+  .media-item {
+    background: var(--surface);
+    aspect-ratio: 4/3;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .media-item:hover .media-overlay { opacity: 1; }
+  .media-thumb {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .media-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .media-placeholder-icon {
+    width: 40px;
+    height: 40px;
+    opacity: 0.1;
+  }
+  .media-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10,10,10,0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .media-overlay-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .media-overlay-meta { font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; }
+
+  /* =====================
+     VISUAL DIRECTION
+  ===================== */
+  .vis-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  @media (max-width: 768px) { .vis-grid { grid-template-columns: 1fr; } }
+
+  .vis-block {
+    background: var(--surface);
+    padding: 40px;
+  }
+  .vis-block h3 {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+  }
+
+  .vis-rules { display: flex; flex-direction: column; gap: 20px; }
+  .vis-rule {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .vis-rule-mark {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--orange-dim);
+    border: 1px solid var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .vis-rule-mark svg { width: 10px; height: 10px; }
+  .vis-rule-text { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+  .vis-rule-text strong { color: var(--text-primary); font-weight: 600; }
+
+  .moodboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+  }
+  .mood-tile {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  .mood-tile--dark { background: #0A0A0A; }
+  .mood-tile--charcoal { background: #1A1A1A; }
+  .mood-tile--surface { background: #202020; }
+  .mood-tile--orange { background: rgba(251,92,30,0.15); }
+  .mood-tile-label {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* =====================
+     PRESS & PARTNERSHIP
+  ===================== */
+  .press-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  @media (max-width: 768px) { .press-grid { grid-template-columns: 1fr; } }
+
+  .press-card {
+    background: var(--surface);
+    padding: 36px 32px;
+    transition: background 0.2s;
+  }
+  .press-card:hover { background: var(--surface-2); }
+  .press-card-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--orange-dim);
+    border: 1px solid rgba(251,92,30,0.2);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .press-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .press-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px; }
+  .press-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--orange);
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .press-card-link:hover { opacity: 0.7; }
+  .press-card-link svg { transition: transform 0.2s; }
+  .press-card-link:hover svg { transform: translateX(3px); }
+
+  /* =====================
+     DOWNLOAD CENTER
+  ===================== */
+  .download-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  .download-table thead tr {
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+  }
+  .download-table th {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 14px 24px;
+    text-align: left;
+    font-weight: 500;
+  }
+  .download-table tbody tr {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  .download-table tbody tr:last-child { border-bottom: none; }
+  .download-table tbody tr:hover { background: var(--surface-2); }
+  .download-table td {
+    padding: 18px 24px;
+    vertical-align: middle;
+  }
+  .dl-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .dl-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .dl-type {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+  .dl-type--pdf { background: rgba(220,80,50,0.12); color: #E05030; border: 1px solid rgba(220,80,50,0.2); }
+  .dl-type--zip { background: var(--orange-dim); color: var(--orange); border: 1px solid rgba(251,92,30,0.2); }
+  .dl-type--ai { background: rgba(100,180,80,0.1); color: #50A040; border: 1px solid rgba(100,180,80,0.2); }
+  .dl-type--mp4 { background: rgba(80,120,220,0.1); color: #5090E0; border: 1px solid rgba(80,120,220,0.2); }
+  .dl-size { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+  .dl-updated { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+  .dl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid var(--border-mid);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .dl-btn:hover { border-color: var(--orange); color: var(--orange); }
+
+  @media (max-width: 768px) {
+    .download-table thead { display: none; }
+    .download-table tbody tr { display: block; padding: 16px; border-bottom: 1px solid var(--border); }
+    .download-table td { display: flex; padding: 6px 0; align-items: center; justify-content: space-between; }
+    .download-table td::before { content: attr(data-label); font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+  }
+
+  /* =====================
+     FOOTER
+  ===================== */
+  #footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--border);
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 80px;
+    align-items: start;
+    margin-bottom: 56px;
+  }
+  @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; gap: 48px; } }
+
+  .footer-brand { max-width: 320px; }
+  .footer-brand .hpw-mark { margin-bottom: 16px; }
+  .footer-brand p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-top: 12px; }
+
+  .footer-links { display: flex; gap: 64px; }
+  @media (max-width: 600px) { .footer-links { flex-direction: column; gap: 32px; } }
+
+  .footer-col h4 {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--text-primary); }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  @media (max-width: 600px) { .footer-bottom { flex-direction: column; gap: 12px; align-items: flex-start; } }
+
+  .footer-copy { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em; }
+  .footer-legal { display: flex; gap: 24px; }
+  .footer-legal a { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+  .footer-legal a:hover { color: var(--text-secondary); }
+
+  /* =====================
+     DECORATIVE ELEMENTS
+  ===================== */
+  .bracket-corner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-top: 1.5px solid var(--orange);
+    border-left: 1.5px solid var(--orange);
+  }
+
+  .horizontal-rule {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* Subtle grid texture */
+  #hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.4;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 70%, transparent 100%);
+  }
+
+  /* Fade-in on scroll */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* =====================
+     MEDIA CATEGORY CONTENT
+  ===================== */
+  .cat-content { display: none; }
+  .cat-content.active { display: grid; }
+
+  /* =====================
+     CONTACT STRIP
+  ===================== */
+  .contact-strip {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .contact-strip h2 { font-size: clamp(24px, 3vw, 36px); font-weight: 700; letter-spacing: -0.02em; max-width: 480px; }
+  .contact-strip h2 em { font-style: normal; color: var(--orange); }
+  .contact-strip-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
+
+  /* =====================
+     USAGE NOTES
+  ===================== */
+  .usage-note {
+    background: var(--orange-dim2);
+    border: 1px solid rgba(251,92,30,0.15);
+    border-left: 3px solid var(--orange);
+    padding: 14px 18px;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin-top: 16px;
+  }
+  .usage-note p { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+  .usage-note strong { color: var(--text-primary); }
+
+</style>
+</head>
+<body>
+
+<!-- ==============================
+     HEADER
+=============================== -->
+<header id="header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="#" class="hpw-mark">
+        <!-- HyperWork logomark SVG -->
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="12" y="0" width="6" height="20" rx="1" fill="#FB5C1E"/>
+          <rect x="0" y="11" width="20" height="6" rx="1" fill="#FB5C1E"/>
+          <rect x="14" y="14" width="14" height="6" rx="1" fill="#FB5C1E" opacity="0.6"/>
+          <rect x="14" y="14" width="6" height="14" rx="1" fill="#FB5C1E" opacity="0.6"/>
+        </svg>
+        <span class="hpw-mark-text">HyperWork</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">Thương hiệu</a></li>
+        <li><a href="#logo">Logo</a></li>
+        <li><a href="#guidelines">Hướng dẫn</a></li>
+        <li><a href="#media">Thư viện</a></li>
+        <li><a href="#press">Hợp tác</a></li>
+        <li><a href="#downloads">Tải xuống</a></li>
+      </ul>
+
+      <a href="#downloads" class="nav-cta">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 5.5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Media Kit
+      </a>
+
+      <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'; document.querySelector('.nav-links').style.flexDirection = 'column'; document.querySelector('.nav-links').style.position = 'fixed'; document.querySelector('.nav-links').style.top = '64px'; document.querySelector('.nav-links').style.left = '0'; document.querySelector('.nav-links').style.right = '0'; document.querySelector('.nav-links').style.background = '#0A0A0A'; document.querySelector('.nav-links').style.padding = '24px 48px'; document.querySelector('.nav-links').style.borderBottom = '1px solid rgba(255,255,255,0.07)'; document.querySelector('.nav-links').style.gap = '20px'; document.querySelector('.nav-links').style.zIndex = '99';">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 4h14M2 9h14M2 14h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+
+<!-- ==============================
+     HERO
+=============================== -->
+<section id="hero">
+  <!-- background pattern SVG -->
+  <svg class="hero-bg-pattern" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="hpw-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+        <path d="M28 0 L32 0 L32 20 L40 20 L40 24 L32 24 L32 32 L28 32 L28 24 L20 24 L20 20 L28 20 Z" fill="#FB5C1E"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#hpw-pattern)"/>
+  </svg>
+
+  <div class="container" style="position:relative; z-index:1;">
+    <div class="hero-tag fade-in">
+      <span class="hero-tag-dot"></span>
+      <span class="label" style="color:var(--orange);">Brand Assets Portal — V1.0</span>
+    </div>
+
+    <h1 class="display-xl hero-headline fade-in">
+      Hệ thống nhận diện<br>
+      <em>HyperWork.</em>
+    </h1>
+
+    <p class="body-lg hero-body fade-in">
+      Tài nguyên thương hiệu chính thức cho đối tác truyền thông, agency sáng tạo, nhà phân phối và tổ chức sự kiện. Mọi thứ bạn cần để trình bày HyperWork đúng chuẩn.
+    </p>
+
+    <div class="hero-actions fade-in">
+      <a href="#downloads" class="btn-primary">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v9M3.5 7l3.5 3.5L10.5 7M1 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Tải Media Kit
+      </a>
+      <a href="#guidelines" class="btn-ghost">
+        Xem Hướng dẫn thương hiệu
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-stats fade-in">
+      <div class="hero-stat">
+        <span class="hero-stat-num">6<span class="orange">+</span></span>
+        <span class="meta">Dòng sản phẩm</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">200<span class="orange">+</span></span>
+        <span class="meta">Tệp brand asset</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">B2B<span class="orange">.</span></span>
+        <span class="meta">Workspace ecosystem</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">V1<span class="orange">.0</span></span>
+        <span class="meta">Brand guideline</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="horizontal-rule">
+
+
+<!-- ==============================
+     ABOUT
+=============================== -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-left fade-in">
+        <span class="label">Thương hiệu</span>
+        <h2 class="display-md" style="margin-top:16px;margin-bottom:32px;">
+          Không gian làm việc<br>được thiết kế<br>
+          <span class="orange">có hệ thống.</span>
+        </h2>
+        <p class="body-md" style="color:var(--text-secondary);margin-bottom:20px;">
+          HyperWork là nền tảng workspace ergonomic được xây dựng cho người làm việc thật sự. Từ bàn nâng hạ đến phụ kiện không dây — mỗi sản phẩm là một mảnh ghép trong một hệ thống setup có tư duy.
+        </p>
+        <p class="body-md" style="color:var(--text-secondary);margin-bottom:20px;">
+          Thương hiệu phản ánh tư duy đó: có cấu trúc, có hệ thống, không dư thừa. Mọi quyết định thiết kế đều phục vụ hiệu suất — cả trong sản phẩm lẫn trong truyền thông.
+        </p>
+        <p class="body-md" style="color:var(--text-secondary);">
+          Portal này là điểm khởi đầu cho bất kỳ ai muốn đại diện đúng cho HyperWork — từ bài viết báo chí đến activation tại sự kiện, từ campaign số đến tài liệu phân phối.
+        </p>
+      </div>
+
+      <div class="fade-in">
+        <div class="ecosystem-pillars">
+          <div class="pillar">
+            <span class="pillar-num">01</span>
+            <div class="pillar-content">
+              <h4>Ergonomic Furniture</h4>
+              <p>Bàn nâng hạ, ghế công thái học — thiết kế xung quanh cơ thể người dùng.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">02</span>
+            <div class="pillar-content">
+              <h4>Monitor Arms & Stands</h4>
+              <p>Hệ thống treo màn hình chính xác — giải phóng mặt bàn, tối ưu góc nhìn.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">03</span>
+            <div class="pillar-content">
+              <h4>Wireless Peripherals</h4>
+              <p>Chuột, bàn phím không dây — setup gọn, kết nối liền mạch.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">04</span>
+            <div class="pillar-content">
+              <h4>Workspace Accessories</h4>
+              <p>Phụ kiện tinh tế — hoàn thiện setup và nâng tầm trải nghiệm làm việc.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">05</span>
+            <div class="pillar-content">
+              <h4>B2B Office Projects</h4>
+              <p>Giải pháp workspace tổng thể cho doanh nghiệp — tư vấn, thiết kế, triển khai.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="horizontal-rule">
+
+
+<!-- ==============================
+     LOGO ASSETS
+=============================== -->
+<section id="logo" class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label">Logo Assets</span>
+      <h2 class="display-md" style="margin-top:16px;">Bộ nhận diện logo</h2>
+      <p>Tất cả biến thể logo chính thức. Chỉ sử dụng file gốc được cung cấp — không vẽ lại, không điều chỉnh màu ngoài hệ thống.</p>
+    </div>
+
+    <div class="logo-grid fade-in">
+
+      <!-- Dark bg white logo -->
+      <div class="logo-card">
+        <div class="logo-preview logo-preview--dark">
+          <div class="logo-preview-bracket"></div>
+          <svg width="180" height="36" viewBox="0 0 180 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="16" y="0" width="6" height="24" rx="1" fill="#FB5C1E"/>
+            <rect x="4" y="12" width="24" height="6" rx="1" fill="#FB5C1E"/>
+            <rect x="18" y="18" width="10" height="6" rx="1" fill="#FB5C1E" opacity="0.55"/>
+            <rect x="18" y="18" width="6" height="10" rx="1" fill="#FB5C1E" opacity="0.55"/>
+            <text x="42" y="26" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="24" letter-spacing="2" fill="#FFFFFF" text-anchor="start">HYPERWORK</text>
+          </svg>
+        </div>
+        <div class="logo-card-body">
+          <h4>Logo — Nền tối</h4>
+          <span class="meta" style="display:block;margin-bottom:12px;">Phiên bản chính / Dark background</span>
+          <div class="logo-card-formats">
+            <span class="format-tag">SVG</span>
+            <span class="format-tag">PNG</span>
+            <span class="format-tag">AI</span>
+          </div>
+          <a class="logo-card-dl" onclick="handleDownload('Logo Nền Tối')">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 5.5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Tải xuống
+          </a>
+        </div>
+      </div>
+
+      <!-- Light bg dark logo -->
+      <div class="logo-card">
+        <div class="logo-preview logo-preview--light">
+          <div class="logo-preview-bracket" style="--border-mid: rgba(0,0,0,0.08);"></div>
+          <svg width="180" height="36" viewBox="0 0 180 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="16" y="0" width="6" height="24" rx="1" fill="#FB5C1E"/>
+            <rect x="4" y="12" width="24" height="6" rx="1" fill="#FB5C1E"/>
+            <rect x="18" y="18" width="10" height="6" rx="1" fill="#FB5C1E" opacity="0.55"/>
+            <rect x="18" y="18" width="6" height="10" rx="1" fill="#FB5C1E" opacity="0.55"/>
+            <text x="42" y="26" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="24" letter-spacing="2" fill="#0A0A0A" text-anchor="start">HYPERWORK</text>
+          </svg>
+        </div>
+        <div class="logo-card-body">
+          <h4>Logo — Nền sáng</h4>
+          <span class="meta" style="display:block;margin-bottom:12px;">Phiên bản nền trắng / Light background</span>
+          <div class="logo-card-formats">
+            <span class="format-tag">SVG</span>
+            <span class="format-tag">PNG</span>
+            <span class="format-tag">AI</span>
+          </div>
+          <a class="logo-card-dl" onclick="handleDownload('Logo Nền Sáng')">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 5.5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Tải xuống
+          </a>
+        </div>
+      </div>
+
+      <!-- Orange bg white logo -->
+      <div class="logo-card">
+        <div class="logo-preview logo-preview--orange">
+          <div class="logo-preview-bracket" style="--border-mid: rgba(255,255,255,0.2);"></div>
+          <svg width="180" height="36" viewBox="0 0 180 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="16" y="0" width="6" height="24" rx="1" fill="#FFFFFF"/>
+            <rect x="4" y="12" width="24" height="6" rx="1" fill="#FFFFFF"/>
+            <rect x="18" y="18" width="10" height="6" rx="1" fill="#FFFFFF" opacity="0.55"/>
+            <rect x="18" y="18" width="6" height="10" rx="1" fill="#FFFFFF" opacity="0.55"/>
+            <text x="42" y="26" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="24" letter-spacing="2" fill="#FFFFFF" text-anchor="start">HYPERWORK</text>
+          </svg>
+        </div>
+        <div class="logo-card-body">
+          <h4>Logo — Nền cam</h4>
+          <span class="meta" style="display:block;margin-bottom:12px;">Chỉ dùng cho tài liệu thương hiệu</span>
+          <div class="logo-card-formats">
+            <span class="format-tag">SVG</span>
+            <span class="format-tag">PNG</span>
+          </div>
+          <a class="logo-card-dl" onclick="handleDownload('Logo Nền Cam')">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 5.5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Tải xuống
+          </a>
+        </div>
+      </div>
+
+      <!-- Logomark only -->
+      <div class="logo-card">
+        <div class="logo-preview logo-preview--dark">
+          <div class="logo-preview-bracket"></div>
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="28" y="4" width="10" height="36" rx="2" fill="#FB5C1E"/>
+            <rect x="4" y="26" width="36" height="10" rx="2" fill="#FB5C1E"/>
+            <rect x="32" y="32" width="28" height="10" rx="2" fill="#FB5C1E" opacity="0.5"/>
+            <rect x="32" y="32" width="10" height="28" rx="2" fill="#FB5C1E" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="logo-card-body">
+          <h4>Biểu tượng (Icon only)</h4>
+          <span class="meta" style="display:block;margin-bottom:12px;">Dùng khi không gian hạn chế</span>
+          <div class="logo-card-formats">
+            <span class="format-tag">SVG</span>
+            <span class="format-tag">PNG</span>
+            <span class="format-tag">ICO</span>
+          </div>
+          <a class="logo-card-dl" onclick="handleDownload('Biểu Tượng')">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 5.5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Tải xuống
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="usage-note fade-in">
+      <p><strong>Lưu ý sử dụng:</strong> Luôn giữ khoảng an toàn (safe zone) bằng chiều rộng ký tự "+" xung quanh logo. Không kéo giãn, thêm viền, đổi màu ngoài hệ thống, hoặc áp dụng hiệu ứng lên logo. Tải file gốc được cung cấp — không vẽ lại trong bất kỳ trường hợp nào.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="horizontal-rule">
+
+
+<!-- ==============================
+     BRAND GUIDELINES
+=============================== -->
+<section id="guidelines" class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label">Brand Guidelines</span>
+      <h2 class="display-md" style="margin-top:16px;">Hệ thống thiết kế</h2>
+      <p>Màu sắc, chữ, bố cục và triết lý thương hiệu. Áp dụng nhất quán trên mọi điểm tiếp xúc.</p>
+    </div>
+
+    <!-- Color palette -->
+    <div class="brand-guide-grid fade-in">
+      <div class="brand-guide-block brand-guide-block--full">
+        <h3>Bảng màu chính</h3>
+        <div class="color-palette">
+          <div class="swatch-group">
+            <div class="swatch" style="background:#FB5C1E; width:120px; height:80px;"></div>
+            <span class="swatch-label">#FB5C1E</span>
+            <span class="swatch-name">HyperWork Orange</span>
+          </div>
+          <div class="swatch-group">
+            <div class="swatch" style="background:#000000;"></div>
+            <span class="swatch-label">#000000</span>
+            <span class="swatch-name">Black</span>
+          </div>
+          <div class="swatch-group">
+            <div class="swatch" style="background:#808080;"></div>
+            <span class="swatch-label">#808080</span>
+            <span class="swatch-name">Dark Gray</span>
+          </div>
+          <div class="swatch-group">
+            <div class="swatch" style="background:#BDC0C0;"></div>
+            <span class="swatch-label">#BDC0C0</span>
+            <span class="swatch-name">Light Gray</span>
+          </div>
+          <div class="swatch-group">
+            <div class="swatch" style="background:#FFFFFF; border:1px solid rgba(255,255,255,0.15);"></div>
+            <span class="swatch-label">#FFFFFF</span>
+            <span class="swatch-name">White</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-guide-block">
+        <h3>Màu bổ trợ</h3>
+        <div class="color-palette" style="flex-wrap:wrap;gap:8px;">
+          <div class="swatch-group">
+            <div class="swatch" style="background:#DAF8E1; width:48px; height:48px;"></div>
+            <span class="swatch-label" style="font-size:9px;">#DAF8E1</span>
+          </div>
+          <div class="swatch-group">
+            <div class="swatch" style="background:#552F17; width:48px; height:48px;"></div>
+            <span class="swatch-label" style="font-size:9px;">#552F17</span>
+          </div>
+          <div class="swatch-group">
+            <div class="swatch" style="background:#007AFF; width:48px; height:48px;"></div>
+            <span class="swatch-label" style="font-size:9px;">#007AFF</span>
+          </div>
+          <div class="swatch-group">
+            <div class="swatch" style="background:#FFF96A; width:48px; height:48px;"></div>
+            <span class="swatch-label" style="font-size:9px;">#FFF96A</span>
+          </div>
+          <div class="swatch-group">
+            <div class="swatch" style="background:#FF69B4; width:48px; height:48px;"></div>
+            <span class="swatch-label" style="font-size:9px;">#FF69B4</span>
+          </div>
+          <div class="swatch-group">
+            <div class="swatch" style="background:#47FFF1; width:48px; height:48px;"></div>
+            <span class="swatch-label" style="font-size:9px;">#47FFF1</span>
+          </div>
+        </div>
+        <p style="font-size:12px; color:var(--text-muted); margin-top:16px; line-height:1.5;">Màu bổ trợ chỉ dùng làm màu nhấn trong các ứng dụng cụ thể — bao bì, social, sự kiện. Không dùng làm màu nền chính.</p>
+      </div>
+
+      <div class="brand-guide-block">
+        <h3>Hệ chữ</h3>
+        <div class="type-specimens">
+          <div class="type-specimen">
+            <span class="type-specimen-meta">Logo typeface — Youth (custom)</span>
+            <p class="type-specimen-sample" style="font-size:28px;font-weight:800;letter-spacing:0.04em;">HYPERWORK</p>
+          </div>
+          <div class="type-specimen">
+            <span class="type-specimen-meta">Primary — Plus Jakarta Sans</span>
+            <p class="type-specimen-sample" style="font-size:22px;font-weight:700;letter-spacing:-0.02em;">Workspace ecosystem</p>
+            <p class="type-specimen-sample" style="font-size:15px;font-weight:400;color:var(--text-secondary);margin-top:6px;">Regular body copy cho nội dung chính.</p>
+          </div>
+          <div class="type-specimen">
+            <span class="type-specimen-meta">Secondary — Chivo Mono</span>
+            <p class="type-specimen-sample" style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.08em;">SPECS / LABELS / METADATA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brand principles -->
+    <div style="margin-top:2px;">
+      <div class="brand-guide-grid" style="grid-template-columns: 1fr 1fr; margin-bottom:0;">
+        <div class="brand-guide-block">
+          <h3>Nguyên tắc thương hiệu</h3>
+          <div class="principles-list">
+            <div class="principle">
+              <span class="principle-idx">01</span>
+              <div class="principle-body">
+                <h4>Có hệ thống</h4>
+                <p>Mọi quyết định thiết kế đều là một phần của hệ thống lớn hơn — không có yếu tố trang trí đơn thuần.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <span class="principle-idx">02</span>
+              <div class="principle-body">
+                <h4>Thực dụng, không phô trương</h4>
+                <p>Sản phẩm nói thay cho thương hiệu. Thiết kế phục vụ công năng trước khi phục vụ thẩm mỹ.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <span class="principle-idx">03</span>
+              <div class="principle-body">
+                <h4>Nhất quán theo thời gian</h4>
+                <p>Nhận diện thương hiệu được xây dựng qua sự lặp lại có kiểm soát — không thay đổi tùy tiện.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="brand-guide-block">
+          <h3>Giọng văn thương hiệu</h3>
+          <div class="principles-list">
+            <div class="principle">
+              <span class="principle-idx">✓</span>
+              <div class="principle-body">
+                <h4>Ngắn gọn, thực tế</h4>
+                <p>Viết như người trong ngành — không giải thích dài dòng những điều người dùng đã biết.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <span class="principle-idx">✓</span>
+              <div class="principle-body">
+                <h4>Insight trước, quảng cáo sau</h4>
+                <p>Bắt đầu từ vấn đề thật của người dùng, không phải từ tính năng sản phẩm.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <span class="principle-idx">✗</span>
+              <div class="principle-body">
+                <h4>Tránh marketing fluff</h4>
+                <p>Không dùng: "đẳng cấp", "hàng đầu", "tiên phong" — nếu không có dữ liệu cụ thể để chứng minh.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="horizontal-rule">
+
+
+<!-- ==============================
+     PRODUCT MEDIA LIBRARY
+=============================== -->
+<section id="media" class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label">Product Media Library</span>
+      <h2 class="display-md" style="margin-top:16px;">Thư viện hình ảnh sản phẩm</h2>
+      <p>Ảnh sản phẩm, render kỹ thuật số và lifestyle photography theo từng danh mục. Tất cả đã được chỉnh sửa và sẵn sàng sử dụng cho truyền thông.</p>
+    </div>
+
+    <div class="category-tabs fade-in">
+      <button class="cat-tab active" onclick="switchCategory('ban-nang-ha', this)">Bàn nâng hạ</button>
+      <button class="cat-tab" onclick="switchCategory('arm', this)">Arm màn hình</button>
+      <button class="cat-tab" onclick="switchCategory('ghe', this)">Ghế công thái học</button>
+      <button class="cat-tab" onclick="switchCategory('accessories', this)">Accessories</button>
+      <button class="cat-tab" onclick="switchCategory('peripherals', this)">Peripherals</button>
+      <button class="cat-tab" onclick="switchCategory('office', this)">Office Projects</button>
+    </div>
+
+    <!-- Category: Bàn nâng hạ -->
+    <div id="cat-ban-nang-ha" class="cat-content active media-grid fade-in">
+      <div class="media-item" onclick="handleDownload('ATLAS ELITE — Studio 01')">
+        <div class="media-placeholder" style="background:#141414;">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="4" y="18" width="32" height="4" rx="1" fill="#333"/><rect x="8" y="22" width="4" height="14" rx="1" fill="#333"/><rect x="28" y="22" width="4" height="14" rx="1" fill="#333"/><rect x="2" y="14" width="36" height="6" rx="1" fill="#444"/></svg>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);letter-spacing:0.06em;">ATLAS ELITE DP01</span>
+        </div>
+        <div class="media-overlay">
+          <p class="media-overlay-title">ATLAS ELITE DP01 — Studio</p>
+          <span class="media-overlay-meta">JPG / 4K / 3 góc chụp</span>
+        </div>
+      </div>
+      <div class="media-item" onclick="handleDownload('ATLAS — Lifestyle 01')">
+        <div class="media-placeholder" style="background:#0F1410;">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="4" y="18" width="32" height="4" rx="1" fill="#1a2a1a"/><rect x="8" y="22" width="4" height="14" rx="1" fill="#1a2a1a"/><rect x="28" y="22" width="4" height="14" rx="1" fill="#1a2a1a"/><rect x="0" y="10" width="40" height="2" rx="1" fill="#FB5C1E" opacity="0.3"/></svg>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);letter-spacing:0.06em;">ATLAS — Lifestyle</span>
+        </div>
+        <div class="media-overlay">
+          <p class="media-overlay-title">ATLAS — Workspace Lifestyle</p>
+          <span class="media-overlay-meta">JPG / Hi-res / 5 góc</span>
+        </div>
+      </div>
+      <div class="media-item" onclick="handleDownload('Standing Desk — Detail')">
+        <div class="media-placeholder" style="background:#111111;">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#222" stroke-width="2"/><path d="M14 20h12M20 14v12" stroke="#FB5C1E" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);letter-spacing:0.06em;">Chi tiết cơ cấu</span>
+        </div>
+        <div class="media-overlay">
+          <p class="media-overlay-title">Bàn nâng hạ — Chi tiết kỹ thuật</p>
+          <span class="media-overlay-meta">JPG / Product detail</span>
+        </div>
+      </div>
+      <div class="media-item" onclick="handleDownload('Standing Desk — Spec Render')">
+        <div class="media-placeholder" style="background:#0D0D0D;">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="8" y="10" width="24" height="16" rx="2" stroke="#333" stroke-width="1.5"/><rect x="10" y="12" width="20" height="12" rx="1" fill="#1a1a1a"/><rect x="4" y="26" width="32" height="4" rx="1" fill="#333"/></svg>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);letter-spacing:0.06em;">3D Render</span>
+        </div>
+        <div class="media-overlay">
+          <p class="media-overlay-title">Bàn nâng hạ — 3D Spec Render</p>
+          <span class="media-overlay-meta">PNG / Transparent bg</span>
+        </div>
+      </div>
+      <div class="media-item" onclick="handleDownload('B2B Setup — Office 01')">
+        <div class="media-placeholder" style="background:#0E0E12;">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="2" y="18" width="36" height="3" rx="1" fill="#1c1c2a"/><rect x="6" y="21" width="4" height="12" rx="1" fill="#1c1c2a"/><rect x="30" y="21" width="4" height="12" rx="1" fill="#1c1c2a"/><rect x="10" y="10" width="20" height="10" rx="1" fill="#222230"/></svg>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);letter-spacing:0.06em;">B2B Setup</span>
+        </div>
+        <div class="media-overlay">
+          <p class="media-overlay-title">B2B Office Setup</p>
+          <span class="media-overlay-meta">JPG / Editorial / Hi-res</span>
+        </div>
+      </div>
+      <div class="media-item" onclick="handleDownload('Campaign — Summer Setup')">
+        <div class="media-placeholder" style="background:#150A04;">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="12" r="8" fill="#FB5C1E" opacity="0.12"/><rect x="8" y="22" width="24" height="3" rx="1" fill="#2a1a0a"/><rect x="12" y="25" width="4" height="10" rx="1" fill="#2a1a0a"/><rect x="24" y="25" width="4" height="10" rx="1" fill="#2a1a0a"/></svg>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);letter-spacing:0.06em;">Campaign Visual</span>
+        </div>
+        <div class="media-overlay">
+          <p class="media-overlay-title">Summer Setup Campaign</p>
+          <span class="media-overlay-meta">JPG / Campaign / 16:9</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category: ARM -->
+    <div id="cat-arm" class="cat-content media-grid fade-in">
+      <div class="media-item" onclick="handleDownload('Core ARM — Studio White')">
+        <div class="media-placeholder" style="background:#111111;">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><line x1="10" y1="36" x2="10" y2="10" stroke="#333" stroke-width="3" stroke-linecap="round"/><path d="M10 10 Q10 6 14 6 L28 6" stroke="#333" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M28 6 Q34 6 34 12 L34 20" stroke="#333" stroke-width="2.5" stroke-linecap="round" fill="none"/><rect x="30" y="20" width="8" height="12" rx="1" fill="#FB5C1E" opacity="0.4"/></svg>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);letter-spacing:0.06em;">CORE ARM</span>
+        </div>
+        <div class="media-overlay">
+          <p class="media-overlay-title">Core ARM — Studio White</p>
+          <span class="media-overlay-meta">JPG / 4K / White bg</span>
+        </div>
+      </div>
+      <div class="media-item" onclick="handleDownload('T9 Pro III — Studio')">
+        <div class="media-placeholder" style="background:#0D0D0D;">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><line x1="8" y1="38" x2="8" y2="12" stroke="#222" stroke-width="3" stroke-linecap="round"/><path d="M8 12 Q8 6 16 6 L32 6" stroke="#444" stroke-width="2" fill="none"/><path d="M32 6 Q38 6 38 14 L38 24" stroke="#444" stroke-width="2" fill="none"/><rect x="34" y="24" width="8" height="10" rx="1" fill="#555"/></svg>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);letter-spacing:0.06em;">T9 PRO III</span>
+        </div>
+        <div class="media-overlay">
+          <p class="media-overlay-title">T9 Pro III — Studio Dark</p>
+          <span class="media-overlay-meta">JPG / Hi-res</span>
+        </div>
+      </div>
+      <div class="media-item" onclick="handleDownload('ARM — Lifestyle In Use')">
+        <div class="media-placeholder" style="background:#101410;">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="8" y="10" width="28" height="20" rx="2" fill="#1a2a1a" stroke="#222" stroke-width="1"/><rect x="10" y="12" width="24" height="16" rx="1" fill="#111"/><line x1="22" y1="30" x2="22" y2="38" stroke="#222" stroke-width="2"/><rect x="12" y="38" width="20" height="2" rx="1" fill="#222"/></svg>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);letter-spacing:0.06em;">In Use</span>
+        </div>
+        <div class="media-overlay">
+          <p class="media-overlay-title">ARM — Lifestyle In Use</p>
+          <span class="media-overlay-meta">JPG / Workspace context</span>
+        </div>
+      </div>
+      <div class="media-item" onclick="handleDownload('ARM — Packaging')">
+        <div class="media-placeholder" style="background:#0A0505;">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="8" width="28" height="24" rx="2" fill="#1a0a0a" stroke="#330000" stroke-width="1"/><text x="20" y="24" font-family="monospace" font-size="7" fill="#FB5C1E" text-anchor="middle">CORE ARM</text></svg>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);letter-spacing:0.06em;">Packaging</span>
+        </div>
+        <div class="media-overlay">
+          <p class="media-overlay-title">Core ARM — Packaging</p>
+          <span class="media-overlay-meta">JPG / Unboxing ready</span>
+        </div>
+      </div>
+      <div class="media-item" onclick="handleDownload('ARM — Multi-Monitor Setup')">
+        <div class="media-placeholder" style="background:#0C0C10;">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="2" y="10" width="18" height="14" rx="1" fill="#1a1a2a" stroke="#222"/><rect x="24" y="8" width="18" height="14" rx="1" fill="#1a1a2a" stroke="#222"/><line x1="11" y1="24" x2="11" y2="32" stroke="#222" stroke-width="2"/><line x1="33" y1="22" x2="33" y2="32" stroke="#222" stroke-width="2"/></svg>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);letter-spacing:0.06em;">Dual Monitor</span>
+        </div>
+        <div class="media-overlay">
+          <p class="media-overlay-title">Dual Monitor Setup</p>
+          <span class="media-overlay-meta">JPG / Setup editorial</span>
+        </div>
+      </div>
+      <div class="media-item" onclick="handleDownload('ARM — Detail Mechanism')">
+        <div class="media-placeholder" style="background:#0A0A0A;">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="10" stroke="#333" stroke-width="1.5"/><circle cx="20" cy="20" r="4" fill="#FB5C1E" opacity="0.3"/><line x1="20" y1="10" x2="20" y2="30" stroke="#333" stroke-width="1"/><line x1="10" y1="20" x2="30" y2="20" stroke="#333" stroke-width="1"/></svg>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);letter-spacing:0.06em;">Detail</span>
+        </div>
+        <div class="media-overlay">
+          <p class="media-overlay-title">Cơ cấu khớp nối — Detail</p>
+          <span class="media-overlay-meta">JPG / Macro product detail</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other categories (simplified) -->
+    <div id="cat-ghe" class="cat-content media-grid">
+      <div class="media-item" onclick="handleDownload('Ghế công thái học — Studio')"><div class="media-placeholder" style="background:#111;"><svg width="40" height="44" viewBox="0 0 40 44" fill="none"><path d="M20 4 C14 4 10 8 10 14 L10 28 Q10 32 14 32 L26 32 Q30 32 30 28 L30 14 C30 8 26 4 20 4Z" fill="#1a1a1a" stroke="#333" stroke-width="1"/><rect x="8" y="32" width="24" height="3" rx="1" fill="#222"/><rect x="12" y="35" width="4" height="8" rx="1" fill="#222"/><rect x="24" y="35" width="4" height="8" rx="1" fill="#222"/></svg><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">GHẾ ERGONOMIC</span></div><div class="media-overlay"><p class="media-overlay-title">Ghế công thái học — Studio</p><span class="media-overlay-meta">JPG / 4K</span></div></div>
+      <div class="media-item" onclick="handleDownload('Ghế — Lifestyle Office')"><div class="media-placeholder" style="background:#0D110D;"><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">LIFESTYLE</span></div><div class="media-overlay"><p class="media-overlay-title">Ghế — Office Lifestyle</p><span class="media-overlay-meta">JPG / Workspace</span></div></div>
+      <div class="media-item" onclick="handleDownload('Ghế — Detail Lumbar')"><div class="media-placeholder" style="background:#0A0A0A;"><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">LUMBAR DETAIL</span></div><div class="media-overlay"><p class="media-overlay-title">Chi tiết lưng ghế</p><span class="media-overlay-meta">JPG / Macro detail</span></div></div>
+    </div>
+    <div id="cat-accessories" class="cat-content media-grid"><div class="media-item"><div class="media-placeholder" style="background:#111;"><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">GIỎ ĐỂ ĐỒ</span></div><div class="media-overlay"><p class="media-overlay-title">Desk Tray — Studio</p><span class="media-overlay-meta">JPG</span></div></div><div class="media-item"><div class="media-placeholder" style="background:#0D0D0D;"><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">LAPTOP STAND</span></div><div class="media-overlay"><p class="media-overlay-title">Giá đỡ laptop</p><span class="media-overlay-meta">JPG</span></div></div><div class="media-item"><div class="media-placeholder" style="background:#0A0A0A;"><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">MOUSEPAD</span></div><div class="media-overlay"><p class="media-overlay-title">Mousepad HyperWork</p><span class="media-overlay-meta">JPG</span></div></div></div>
+    <div id="cat-peripherals" class="cat-content media-grid"><div class="media-item"><div class="media-placeholder" style="background:#0A0A0F;"><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">WIRELESS MOUSE</span></div><div class="media-overlay"><p class="media-overlay-title">Chuột không dây</p><span class="media-overlay-meta">JPG / Studio</span></div></div><div class="media-item"><div class="media-placeholder" style="background:#0A0F0A;"><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">KEYBOARD</span></div><div class="media-overlay"><p class="media-overlay-title">Bàn phím compact</p><span class="media-overlay-meta">JPG / Studio</span></div></div><div class="media-item"><div class="media-placeholder" style="background:#0F0A0A;"><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">FLIP WALLET</span></div><div class="media-overlay"><p class="media-overlay-title">Flip Wallet</p><span class="media-overlay-meta">JPG / Black bg</span></div></div></div>
+    <div id="cat-office" class="cat-content media-grid"><div class="media-item"><div class="media-placeholder" style="background:#0A0A0A;"><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">OFFICE FULL SETUP</span></div><div class="media-overlay"><p class="media-overlay-title">B2B Office Full Setup</p><span class="media-overlay-meta">JPG / Hi-res panoramic</span></div></div><div class="media-item"><div class="media-placeholder" style="background:#0A0C0A;"><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">EVENT BOOTH</span></div><div class="media-overlay"><p class="media-overlay-title">Event Booth — HPW</p><span class="media-overlay-meta">JPG / Event documentation</span></div></div><div class="media-item"><div class="media-placeholder" style="background:#100A0A;"><span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">B2B CONSULTATION</span></div><div class="media-overlay"><p class="media-overlay-title">B2B Workspace Consultation</p><span class="media-overlay-meta">JPG / Project documentation</span></div></div></div>
+
+  </div>
+</section>
+
+<hr class="horizontal-rule">
+
+
+<!-- ==============================
+     VISUAL DIRECTION
+=============================== -->
+<section id="visual" class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label">Visual Direction</span>
+      <h2 class="display-md" style="margin-top:16px;">Triết lý hình ảnh</h2>
+      <p>Cách HyperWork tiếp cận nhiếp ảnh sản phẩm, render kỹ thuật số và trình bày workspace.</p>
+    </div>
+
+    <div class="vis-grid fade-in">
+      <div class="vis-block">
+        <h3>Nguyên tắc hình ảnh</h3>
+        <div class="vis-rules">
+          <div class="vis-rule">
+            <div class="vis-rule-mark">
+              <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#FB5C1E" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <p class="vis-rule-text"><strong>Studio photography:</strong> Nền trắng hoặc xám nhạt, ánh sáng rim cạnh, sản phẩm chiếm 60–70% khung hình. Không có props rối.</p>
+          </div>
+          <div class="vis-rule">
+            <div class="vis-rule-mark">
+              <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#FB5C1E" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <p class="vis-rule-text"><strong>Lifestyle photography:</strong> Không gian làm việc thực, ánh sáng tự nhiên hoặc khuếch tán. Ấm áp nhưng không giả tạo.</p>
+          </div>
+          <div class="vis-rule">
+            <div class="vis-rule-mark">
+              <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#FB5C1E" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <p class="vis-rule-text"><strong>Ecosystem framing:</strong> Khi có thể, chụp nhiều sản phẩm cùng nhau — thể hiện tư duy setup hệ thống.</p>
+          </div>
+          <div class="vis-rule">
+            <div class="vis-rule-mark">
+              <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#FB5C1E" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <p class="vis-rule-text"><strong>Packaging:</strong> Shot trực diện hoặc góc 45° với ánh sáng studio. Thể hiện chất liệu và độ hoàn thiện.</p>
+          </div>
+          <div class="vis-rule">
+            <div class="vis-rule-mark" style="background:rgba(255,50,50,0.1);border-color:rgba(255,80,80,0.4);">
+              <svg viewBox="0 0 10 10" fill="none"><path d="M2.5 2.5l5 5M7.5 2.5l-5 5" stroke="#E05050" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <p class="vis-rule-text"><strong>Tránh:</strong> Ảnh stock người dùng chung chung, background rối, filter Instagram, màu sắc quá bão hòa.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="vis-block" style="padding:0; overflow:hidden;">
+        <div class="moodboard" style="height:100%; min-height:360px;">
+          <div class="mood-tile mood-tile--dark">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="rgba(255,255,255,0.06)" stroke-width="1"/><line x1="6" y1="20" x2="34" y2="20" stroke="rgba(255,255,255,0.04)"/><line x1="20" y1="6" x2="20" y2="34" stroke="rgba(255,255,255,0.04)"/></svg>
+            <span class="mood-tile-label">Studio dark</span>
+          </div>
+          <div class="mood-tile mood-tile--orange">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="12" y="0" width="8" height="22" rx="1" fill="rgba(251,92,30,0.4)"/><rect x="0" y="12" width="22" height="8" rx="1" fill="rgba(251,92,30,0.4)"/></svg>
+            <span class="mood-tile-label">Orange accent</span>
+          </div>
+          <div class="mood-tile mood-tile--charcoal">
+            <div style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.1em;color:rgba(255,255,255,0.15);">SYSTEM</div>
+            <span class="mood-tile-label">Mono type</span>
+          </div>
+          <div class="mood-tile mood-tile--surface">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="14" width="28" height="3" rx="1" fill="rgba(255,255,255,0.08)"/><rect x="6" y="17" width="4" height="10" rx="1" fill="rgba(255,255,255,0.06)"/><rect x="22" y="17" width="4" height="10" rx="1" fill="rgba(255,255,255,0.06)"/></svg>
+            <span class="mood-tile-label">Product editorial</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="horizontal-rule">
+
+
+<!-- ==============================
+     PRESS & PARTNERSHIP
+=============================== -->
+<section id="press" class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label">Press & Partnership</span>
+      <h2 class="display-md" style="margin-top:16px;">Hợp tác & Truyền thông</h2>
+      <p>Tài nguyên cho báo chí, tổ chức sự kiện, agency sáng tạo và đối tác phân phối.</p>
+    </div>
+
+    <div class="press-grid fade-in">
+      <div class="press-card">
+        <div class="press-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="#FB5C1E" stroke-width="1.5"/><path d="M2 8h16" stroke="#FB5C1E" stroke-width="1.5"/><rect x="5" y="11" width="4" height="2" rx="0.5" fill="#FB5C1E" opacity="0.5"/></svg>
+        </div>
+        <h3>Báo chí & Truyền thông</h3>
+        <p>Press kit đầy đủ bao gồm thông cáo báo chí, ảnh sản phẩm hi-res, thông tin thương hiệu và factsheet doanh nghiệp.</p>
+        <a class="press-card-link" onclick="handleDownload('Press Kit')">
+          Tải Press Kit
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 6h6M7 4l2 2-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+
+      <div class="press-card">
+        <div class="press-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L18 6v8l-8 4-8-4V6l8-4z" stroke="#FB5C1E" stroke-width="1.5"/><path d="M10 2v12" stroke="#FB5C1E" stroke-width="1.5" opacity="0.5"/></svg>
+        </div>
+        <h3>Sự kiện & Triển lãm</h3>
+        <p>Bộ tài nguyên sự kiện: banner, backdrop, bộ nhận diện gian hàng, standee và vật phẩm trưng bày tiêu chuẩn.</p>
+        <a class="press-card-link" onclick="handleDownload('Event Assets')">
+          Tải Event Assets
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 6h6M7 4l2 2-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+
+      <div class="press-card">
+        <div class="press-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#FB5C1E" stroke-width="1.5"/><path d="M10 6v4l3 3" stroke="#FB5C1E" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/></svg>
+        </div>
+        <h3>Content Creator & Agency</h3>
+        <p>Tài nguyên sáng tạo cho nội dung số: ảnh hi-res, footage B-roll, social templates và brand story guide.</p>
+        <a class="press-card-link" onclick="handleDownload('Creator Pack')">
+          Tải Creator Pack
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 6h6M7 4l2 2-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+
+      <div class="press-card">
+        <div class="press-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="#FB5C1E" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Nhà phân phối & Đại lý</h3>
+        <p>Tài liệu sản phẩm, catalog kỹ thuật số, bảng thông số kỹ thuật và tài liệu đào tạo cho đối tác phân phối.</p>
+        <a class="press-card-link" onclick="handleDownload('Distributor Kit')">
+          Yêu cầu tài liệu
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 6h6M7 4l2 2-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+
+      <div class="press-card">
+        <div class="press-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="6" width="16" height="12" rx="2" stroke="#FB5C1E" stroke-width="1.5"/><path d="M14 6V5a4 4 0 00-8 0v1" stroke="#FB5C1E" stroke-width="1.5"/></svg>
+        </div>
+        <h3>Yêu cầu hợp tác</h3>
+        <p>Gửi brief hợp tác, đề xuất sponsorship hoặc yêu cầu product seeding. Đội ngũ HyperWork phản hồi trong 3 ngày làm việc.</p>
+        <a class="press-card-link" href="mailto:hi@hyperwork.vn">
+          Liên hệ ngay
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 6h6M7 4l2 2-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+
+      <div class="press-card">
+        <div class="press-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="6" height="6" rx="1" stroke="#FB5C1E" stroke-width="1.5"/><rect x="11" y="3" width="6" height="6" rx="1" stroke="#FB5C1E" stroke-width="1.5"/><rect x="3" y="11" width="6" height="6" rx="1" stroke="#FB5C1E" stroke-width="1.5"/><rect x="11" y="11" width="6" height="6" rx="1" stroke="#FB5C1E" stroke-width="1.5" opacity="0.4"/></svg>
+        </div>
+        <h3>B2B Workspace Projects</h3>
+        <p>Danh mục dự án B2B, case studies, và tài liệu tư vấn workspace cho doanh nghiệp vừa và lớn.</p>
+        <a class="press-card-link" href="mailto:hi@hyperwork.vn">
+          Tư vấn dự án
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 6h6M7 4l2 2-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="horizontal-rule">
+
+
+<!-- ==============================
+     DOWNLOAD CENTER
+=============================== -->
+<section id="downloads" class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label">Download Center</span>
+      <h2 class="display-md" style="margin-top:16px;">Tất cả tài nguyên</h2>
+      <p>Trung tâm tải xuống tập trung. Mọi file đều là phiên bản chính thức mới nhất.</p>
+    </div>
+
+    <div class="fade-in">
+      <table class="download-table">
+        <thead>
+          <tr>
+            <th>Tên tài liệu</th>
+            <th>Định dạng</th>
+            <th>Dung lượng</th>
+            <th>Cập nhật</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Tên">
+              <div class="dl-name">
+                <div class="dl-icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1" stroke="#FB5C1E" stroke-width="1.2"/><path d="M5 8h6M8 5v6" stroke="#FB5C1E" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/></svg>
+                </div>
+                Brand Guideline V1.0
+              </div>
+            </td>
+            <td data-label="Định dạng"><span class="dl-type dl-type--pdf">PDF</span></td>
+            <td data-label="Dung lượng"><span class="dl-size">24.6 MB</span></td>
+            <td data-label="Cập nhật"><span class="dl-updated">Tháng 3, 2025</span></td>
+            <td data-label="Tải"><button class="dl-btn" onclick="handleDownload('Brand Guideline PDF')"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 5.5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Tải xuống</button></td>
+          </tr>
+          <tr>
+            <td data-label="Tên">
+              <div class="dl-name">
+                <div class="dl-icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2L14 5v6L8 14 2 11V5L8 2z" stroke="#FB5C1E" stroke-width="1.2"/></svg>
+                </div>
+                Logo Package (Full)
+              </div>
+            </td>
+            <td data-label="Định dạng"><span class="dl-type dl-type--zip">ZIP</span></td>
+            <td data-label="Dung lượng"><span class="dl-size">18.2 MB</span></td>
+            <td data-label="Cập nhật"><span class="dl-updated">Tháng 3, 2025</span></td>
+            <td data-label="Tải"><button class="dl-btn" onclick="handleDownload('Logo Package ZIP')"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 5.5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Tải xuống</button></td>
+          </tr>
+          <tr>
+            <td data-label="Tên">
+              <div class="dl-name">
+                <div class="dl-icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" stroke="#50A040" stroke-width="1.2"/><path d="M5.5 8l2 2 3-3" stroke="#50A040" stroke-width="1.2" stroke-linecap="round"/></svg>
+                </div>
+                Brand Assets (AI + EPS)
+              </div>
+            </td>
+            <td data-label="Định dạng"><span class="dl-type dl-type--ai">AI</span></td>
+            <td data-label="Dung lượng"><span class="dl-size">86.4 MB</span></td>
+            <td data-label="Cập nhật"><span class="dl-updated">Tháng 3, 2025</span></td>
+            <td data-label="Tải"><button class="dl-btn" onclick="handleDownload('Brand Assets AI EPS')"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 5.5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Tải xuống</button></td>
+          </tr>
+          <tr>
+            <td data-label="Tên">
+              <div class="dl-name">
+                <div class="dl-icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="8" rx="1" stroke="#E05030" stroke-width="1.2"/><circle cx="5" cy="8" r="1.5" fill="#E05030" opacity="0.5"/></svg>
+                </div>
+                Product Photo Pack — Hi-Res
+              </div>
+            </td>
+            <td data-label="Định dạng"><span class="dl-type dl-type--zip">ZIP</span></td>
+            <td data-label="Dung lượng"><span class="dl-size">342 MB</span></td>
+            <td data-label="Cập nhật"><span class="dl-updated">Tháng 4, 2025</span></td>
+            <td data-label="Tải"><button class="dl-btn" onclick="handleDownload('Product Photo Pack')"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 5.5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Tải xuống</button></td>
+          </tr>
+          <tr>
+            <td data-label="Tên">
+              <div class="dl-name">
+                <div class="dl-icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="8" rx="1" stroke="#5090E0" stroke-width="1.2"/><path d="M6 8l2-2 4 4" stroke="#5090E0" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/></svg>
+                </div>
+                Press Kit — Media Pack
+              </div>
+            </td>
+            <td data-label="Định dạng"><span class="dl-type dl-type--zip">ZIP</span></td>
+            <td data-label="Dung lượng"><span class="dl-size">56.8 MB</span></td>
+            <td data-label="Cập nhật"><span class="dl-updated">Tháng 5, 2025</span></td>
+            <td data-label="Tải"><button class="dl-btn" onclick="handleDownload('Press Kit ZIP')"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 5.5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Tải xuống</button></td>
+          </tr>
+          <tr>
+            <td data-label="Tên">
+              <div class="dl-name">
+                <div class="dl-icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 4.5H14L10.5 9l1.5 4.5L8 11 4 13.5l1.5-4.5L2 6.5h4.5L8 2z" stroke="#5090E0" stroke-width="1.2" stroke-linejoin="round"/></svg>
+                </div>
+                Event Asset Pack
+              </div>
+            </td>
+            <td data-label="Định dạng"><span class="dl-type dl-type--zip">ZIP</span></td>
+            <td data-label="Dung lượng"><span class="dl-size">128 MB</span></td>
+            <td data-label="Cập nhật"><span class="dl-updated">Tháng 3, 2025</span></td>
+            <td data-label="Tải"><button class="dl-btn" onclick="handleDownload('Event Asset Pack')"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 5.5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Tải xuống</button></td>
+          </tr>
+          <tr>
+            <td data-label="Tên">
+              <div class="dl-name">
+                <div class="dl-icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" stroke="#5090E0" stroke-width="1.2"/><path d="M8 5v3l2 2" stroke="#5090E0" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/></svg>
+                </div>
+                Brand Video — Showreel 2025
+              </div>
+            </td>
+            <td data-label="Định dạng"><span class="dl-type dl-type--mp4">MP4</span></td>
+            <td data-label="Dung lượng"><span class="dl-size">210 MB</span></td>
+            <td data-label="Cập nhật"><span class="dl-updated">Tháng 2, 2025</span></td>
+            <td data-label="Tải"><button class="dl-btn" onclick="handleDownload('Brand Showreel')"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 5.5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Tải xuống</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Contact strip -->
+    <div class="contact-strip fade-in" style="margin-top:48px;">
+      <h2>Cần tài nguyên <em>không có trong danh sách?</em></h2>
+      <div class="contact-strip-actions">
+        <a href="mailto:hi@hyperwork.vn" class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M1 4.5l6 4 6-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          hi@hyperwork.vn
+        </a>
+        <a href="#" class="btn-ghost">hyperwork.vn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==============================
+     FOOTER
+=============================== -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="hpw-mark">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+            <rect x="12" y="0" width="6" height="20" rx="1" fill="#FB5C1E"/>
+            <rect x="0" y="11" width="20" height="6" rx="1" fill="#FB5C1E"/>
+            <rect x="14" y="14" width="14" height="6" rx="1" fill="#FB5C1E" opacity="0.5"/>
+            <rect x="14" y="14" width="6" height="14" rx="1" fill="#FB5C1E" opacity="0.5"/>
+          </svg>
+          <span class="hpw-mark-text">HyperWork</span>
+        </a>
+        <p>Ergonomic workspace ecosystem. Được thiết kế cho người làm việc thật sự.</p>
+        <p style="margin-top:8px;">Lô B2-22, Vinhomes Gardenia,<br>Hàm Nghi, Cầu Diễn, Hà Nội.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Sản phẩm</h4>
+          <ul>
+            <li><a href="https://hyperwork.vn" target="_blank">Bàn nâng hạ</a></li>
+            <li><a href="https://hyperwork.vn" target="_blank">Arm màn hình</a></li>
+            <li><a href="https://hyperwork.vn" target="_blank">Ghế công thái học</a></li>
+            <li><a href="https://hyperwork.vn" target="_blank">Accessories</a></li>
+            <li><a href="https://hyperwork.vn" target="_blank">Peripherals</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Thương hiệu</h4>
+          <ul>
+            <li><a href="#about">Về HyperWork</a></li>
+            <li><a href="#logo">Logo Assets</a></li>
+            <li><a href="#guidelines">Brand Guidelines</a></li>
+            <li><a href="#media">Thư viện media</a></li>
+            <li><a href="#press">Hợp tác</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Liên hệ</h4>
+          <ul>
+            <li><a href="mailto:hi@hyperwork.vn">hi@hyperwork.vn</a></li>
+            <li><a href="https://hyperwork.vn" target="_blank">hyperwork.vn</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 HyperWork — 3H Vietnam Trading and Service JSC</span>
+      <div class="footer-legal">
+        <a href="#">Điều khoản sử dụng</a>
+        <a href="#">Chính sách bảo mật</a>
+        <a href="#">Hướng dẫn thương hiệu</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ==============================
+     TOAST NOTIFICATION
+=============================== -->
+<div id="toast" style="
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-mid);
+  border-left: 3px solid var(--orange);
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+  max-width: 320px;
+">
+  <span id="toast-msg">Đang chuẩn bị tải xuống...</span>
+</div>
+
+
+<script>
+  // =====================
+  // SCROLL ANIMATIONS
+  // =====================
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // =====================
+  // CATEGORY TABS
+  // =====================
+  function switchCategory(id, btn) {
+    document.querySelectorAll('.cat-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.cat-tab').forEach(el => el.classList.remove('active'));
+    const target = document.getElementById('cat-' + id);
+    if (target) {
+      target.classList.add('active');
+      target.style.display = 'grid';
+    }
+    btn.classList.add('active');
+  }
+
+  // =====================
+  // TOAST
+  // =====================
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-msg');
+    toastMsg.textContent = msg;
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateY(0)';
+    clearTimeout(window._toastTimer);
+    window._toastTimer = setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(8px)';
+    }, 3000);
+  }
+
+  function handleDownload(name) {
+    showToast('✓ Đang chuẩn bị: ' + name);
+  }
+
+  // =====================
+  // HEADER SHADOW ON SCROLL
+  // =====================
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('header');
+    if (window.scrollY > 20) {
+      header.style.borderBottomColor = 'rgba(255,255,255,0.1)';
+    } else {
+      header.style.borderBottomColor = 'rgba(255,255,255,0.07)';
+    }
+  });
+
+  // =====================
+  // ENSURE INITIAL CAT VISIBLE
+  // =====================
+  document.addEventListener('DOMContentLoaded', () => {
+    const firstCat = document.querySelector('.cat-content.active');
+    if (firstCat) firstCat.style.display = 'grid';
+  });
+</script>
+</body>
+</html>
